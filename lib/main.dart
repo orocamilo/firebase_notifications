@@ -5,6 +5,9 @@ import 'package:firebase_notifications/notifications_service.dart';
 import 'package:flutter/material.dart';
 
 Future _firebaseBackgroundMessage(RemoteMessage message) async {
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   if(message.notification != null){
     print("Some notification received on background...");
   }
